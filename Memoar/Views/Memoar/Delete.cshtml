@@ -1,0 +1,36 @@
+﻿@model Memoar
+
+<style>
+    .btn{
+        width: 150px;
+    }
+    
+</style>
+<form method="post" asp-action="DeletePOST">
+    <input asp-for="Id" hidden/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2>Delete Memoar</h2>
+            <hr/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input disabled asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="Quotation"></label>
+            <input disabled asp-for="Quotation" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Memoar" asp-action="Index" class="btn btn-secondary"> Back To List</a>
+    </div>
+
+</form>
+@section Scripts{
+    @{
+        
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
